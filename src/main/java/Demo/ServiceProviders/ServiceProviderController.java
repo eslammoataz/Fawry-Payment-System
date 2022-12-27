@@ -20,7 +20,7 @@ public class ServiceProviderController {
         return serviceProviderModel.getServiceAmount(input);
     }
 
-    @PostMapping("/service/pay/")
+    @PostMapping("/service/pay")
     public String payService(@RequestBody Map<String, String> input){
         return serviceProviderModel.pay(input);
     }

@@ -21,12 +21,13 @@ public class ServiceProviderModel {
         this.paymentFactory = new PaymentFactory();
     }
 
-    public String pay(Map<String, String> input){
-        serviceProvider =  factory.create(input.get("ServiceProvider"));
-        Payment payment = paymentFactory.create(input.get("paymentmethod") , input);
-        return serviceProvider.pay(payment , Double.parseDouble(input.get("amount")));
+    public String pay(Map<String, String> input) {
+        serviceProvider = factory.create(input.get("ServiceProvider"));
+        Payment payment = paymentFactory.create("Wallet", input);
+        return serviceProvider.pay(payment, 123.0);
     }
-    public double getServiceAmount(Map<String, String> input){
+
+    public double getServiceAmount(Map<String, String> input) {
         serviceProvider = factory.create(input.get("ServiceProvider"));
         return serviceProvider.amount;
     }

@@ -1,7 +1,9 @@
 package Demo.ServiceProviders;
 
 import Demo.Payment.Payment;
+import org.springframework.stereotype.Component;
 
+@Component
 public class EtisalatMobileService extends Services{
 //    @Override
 //    public void generateForm() {
