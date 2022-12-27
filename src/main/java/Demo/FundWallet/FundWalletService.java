@@ -16,11 +16,7 @@ public class FundWalletService {
         this.dataBase = dataBase;
     }
     public String fundByCredit(CreditCardPayment creditCardPayment ,double amount) {
-        Boolean exists = dataBase.checkCustomer(currentCustomer);
-        if(exists){
-            creditCardPayment.pay(amount);
-        }
-        return "No such Customer acc found make sure to register first";
+        return creditCardPayment.pay(amount);
     }
 
 
