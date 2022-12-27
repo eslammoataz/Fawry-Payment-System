@@ -3,7 +3,7 @@ package Demo.Users;
 
 public class Customer implements User {
 
-    public double wallet = 200;
+    public double wallet = 0.0;
 //    Scanner cin = new Scanner(System.in);
     //list transactions
     //list refunds
