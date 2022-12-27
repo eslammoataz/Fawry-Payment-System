@@ -15,6 +15,7 @@ public class AddToWalletController {
     public String addtowallet(@RequestBody Customer customer, @PathVariable("amount")double amount){
        return service.addtowallet(customer,amount);
     }
+    //
 
     @GetMapping("/getamount")
     public double addtowallet(@RequestBody Customer customer){
