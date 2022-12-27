@@ -2,7 +2,6 @@ package Demo.Users;
 
 public class Admin implements User {
     public String email;
-//    Scanner cin = new Scanner(System.in);
     public String username;
     public String password;
 

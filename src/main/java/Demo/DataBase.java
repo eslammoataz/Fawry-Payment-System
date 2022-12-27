@@ -14,10 +14,6 @@ public class DataBase {
     ArrayList<Customer> customers = new ArrayList<>();
 //    ArrayList<Discount> discounts = new ArrayList<>();
 //    ArrayList<Refund> refundRequest = new ArrayList<>();
-    Scanner cin = new Scanner(System.in);
-    public DataBase(){
-    }
-
 
 
 

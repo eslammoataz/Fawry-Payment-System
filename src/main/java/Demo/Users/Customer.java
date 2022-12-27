@@ -4,7 +4,6 @@ package Demo.Users;
 public class Customer implements User {
 
     public double wallet = 0.0;
-//    Scanner cin = new Scanner(System.in);
     //list transactions
     //list refunds
     public String email;
@@ -17,7 +16,6 @@ public class Customer implements User {
         this.username = _userName;
         this.password = _password;
     }
-
 
 //    public void viewDiscounts(DataBase dataBase) {
 //        int c = 1;
@@ -53,19 +51,7 @@ public class Customer implements User {
 //        System.out.println("Refund request completed");
 //    }
 //
-//    public void walletFund() {
-//        System.out.println("Amount you want to add to your wallet");
-//        Double amount = cin.nextDouble();
-//        System.out.println("Choose way of payment \n1.Credit Card  \n2.Cash");
-//        String choice = cin.next();
-//        Payment payment = null;
-//        if (choice.equals("1"))
-//            payment = new CreditCardPayment();
-//        else payment = new CashPayment();
-//        payment.pay(this,amount);
-//        this.wallet+=amount;
-//        System.out.println("Wallet Amount is "+wallet);
-//    }
+
 //
 //    @Override
 //    public void update(String message) {

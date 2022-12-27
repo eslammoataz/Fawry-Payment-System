@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class LoginService {
     DataBase dataBase;
-//    CurrentAdmin currentAdmin;
     public static Customer currentCustomer;
 
     public LoginService(DataBase database) {
