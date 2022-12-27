@@ -1,25 +1,25 @@
 package Demo.AddToWallet;
 
-import Demo.Login.Customer;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class AddToWalletController {
-    CustomerService service;
+    AddToWalletService service;
 
-    public AddToWalletController(CustomerService service) {
+
+    public AddToWalletController(AddToWalletService service ) {
         this.service = service;
     }
 
-    @PostMapping("/{amount}")
-    public String addtowallet(@RequestBody Customer customer, @PathVariable("amount")double amount){
-       return service.addtowallet(customer,amount);
+    @PostMapping("/addwallet/{amount}")
+    public String addtowallet( @PathVariable("amount")double amount){
+       return service.addtowallet(amount);
     }
-    //
 
-    @GetMapping("/getamount")
-    public double addtowallet(@RequestBody Customer customer){
-        return service.getWallet(customer);
+
+    @GetMapping("/getwallet")
+    public double addtowallet(){
+        return service.getWallet();
     }
     public String okay(){
         return service.insideaddtowallet();

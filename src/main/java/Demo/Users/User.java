@@ -1,4 +1,4 @@
-package Demo.Login;
+package Demo.Users;
 
 public interface User {
 

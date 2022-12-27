@@ -1,4 +1,4 @@
-package Demo.Login;
+package Demo.Users;
 
 public class Admin implements User {
     public String email;

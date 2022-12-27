@@ -1,8 +1,8 @@
 package Demo.Login;
 
-import Demo.CurrentAdmin;
-import Demo.CurrentCustomer;
 import Demo.DataBase;
+import Demo.Users.Admin;
+import Demo.Users.Customer;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class LoginService {
     DataBase dataBase;
 //    CurrentAdmin currentAdmin;
-//    public CurrentCustomer currentCustomer;
+    public static Customer currentCustomer;
 
     public LoginService(DataBase database) {
         this.dataBase = database;
@@ -45,7 +45,7 @@ public class LoginService {
     public String loginCustomer(Customer customer) {
         Boolean ok = dataBase.checkCustomer(customer);
         if(ok){
-//            currentCustomer.setCustomer(customer);
+            currentCustomer = dataBase.getCustomer(customer);
             return "Customer logged succefully";
         }
         return "No such Customer Account , Check your inputs";

@@ -1,6 +1,7 @@
 package Demo.Login;
 
-import org.springframework.web.bind.annotation.PostMapping;
+import Demo.Users.Admin;
+import Demo.Users.Customer;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

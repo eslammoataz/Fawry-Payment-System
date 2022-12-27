@@ -1,7 +1,6 @@
 package Demo;
 
-import Demo.Login.Admin;
-import Demo.Login.Customer;
+import Demo.Users.Admin;
 
 public class CurrentAdmin {
     Admin admin;

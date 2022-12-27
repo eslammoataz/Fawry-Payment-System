@@ -1,9 +1,7 @@
-package Demo.Login;
-
-import java.util.Scanner;
+package Demo.Users;
 
 
-public class Customer implements User{
+public class Customer implements User {
 
     public double wallet = 200;
 //    Scanner cin = new Scanner(System.in);

@@ -1,8 +1,8 @@
 package Demo;
-//import Demo.Login.Admin;
-//import Demo.Login.Customer;
-import Demo.Login.Admin;
-import Demo.Login.Customer;
+//import Demo.Users.Admin;
+//import Demo.Users.Customer;
+import Demo.Users.Admin;
+import Demo.Users.Customer;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

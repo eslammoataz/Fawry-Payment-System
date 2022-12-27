@@ -1,6 +1,6 @@
 package Demo;
 
-import Demo.Login.Customer;
+import Demo.Users.Customer;
 
 public class CurrentCustomer { // y3ml call ll service ely customer by3mlha
     public Customer customer;
