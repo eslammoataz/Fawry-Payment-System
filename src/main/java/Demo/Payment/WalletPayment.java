@@ -6,7 +6,6 @@ public class WalletPayment implements Payment {
     public String pay( double amount) {
         if(currentCustomer.wallet < amount)
             return "Not enough Wallet balance";
-
         Transaction transaction = new Transaction();
         transaction.amount = amount;
         transaction.userName = currentCustomer.username;

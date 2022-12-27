@@ -21,9 +21,9 @@ public class ServiceProviderModel {
         this.paymentFactory = new PaymentFactory();
     }
 
-    public String pay(Map<String, String> input) {
-        serviceProvider = factory.create(input.get("ServiceProvider"));
-        Payment payment = paymentFactory.create("Wallet", input);
+    public String pay(Map<String,String>input) {
+        serviceProvider = factory.create("EtisalatMobileService");
+        Payment payment = paymentFactory.create(input.get("paymentmethod"),input);
         return serviceProvider.pay(payment, 123.0);
     }
 
