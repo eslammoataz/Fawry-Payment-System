@@ -1,6 +1,7 @@
 package Demo.ServiceProviders;
 
 import Demo.Payment.Payment;
+import Demo.Payment.PaymentFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -12,17 +13,18 @@ import java.util.Objects;
 @Service
 public class ServiceProviderModel {
     Services serviceProvider;
+    BigFactory factory;
+    PaymentFactory paymentFactory;
 
     public ServiceProviderModel(BigFactory factory) {
         this.factory = factory;
+        this.paymentFactory = new PaymentFactory();
     }
-
-    BigFactory factory;
 
     public String pay(Map<String, String> input){
         serviceProvider =  factory.create(input.get("ServiceProvider"));
-
-        return serviceProvider.pay(payment , amount);
+        Payment payment = paymentFactory.create(input.get("paymentmethod") , input);
+        return serviceProvider.pay(payment , Double.parseDouble(input.get("amount")));
     }
     public double getServiceAmount(Map<String, String> input){
         serviceProvider = factory.create(input.get("ServiceProvider"));
