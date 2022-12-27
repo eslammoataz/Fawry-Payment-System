@@ -1,15 +1,17 @@
 package Demo.Users;
+import Demo.Payment.Transaction;
 
+import java.util.ArrayList;
 
 public class Customer implements User {
 
-    public double wallet = 0.0;
+    public double wallet = 200.0;
     //list transactions
     //list refunds
     public String email;
     public  String username;
     public  String password;
-//    ArrayList<Transaction> transactions = new ArrayList<>();
+    public ArrayList<Transaction> transactions = new ArrayList<>();
 
     public Customer(String _email, String _userName, String _password) {
         this.email = _email;

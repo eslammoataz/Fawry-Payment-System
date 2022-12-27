@@ -3,13 +3,14 @@ import static Demo.Login.LoginService.currentCustomer;
 public class WalletPayment implements Payment {
 
     @Override
-    public Transaction pay( double amount) {
+    public String pay( double amount) {
+        if(currentCustomer.wallet < amount)
+            return "Not enough Wallet balance";
+
         Transaction transaction = new Transaction();
-        System.out.println("Transaction Done Successfully by Wallet Payment");
         transaction.amount = amount;
         transaction.userName = currentCustomer.username;
-        currentCustomer.wallet -= amount;
-        System.out.println("Your Wallet Amount is " + currentCustomer.wallet);
-        return transaction;
+        currentCustomer.wallet-=amount;
+        return "Payment Done By Wallet";
     }
 }
