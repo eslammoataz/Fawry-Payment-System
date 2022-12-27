@@ -4,6 +4,7 @@ import Demo.Payment.CreditCardPayment;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 @RestController
@@ -14,14 +15,13 @@ public class ServiceProviderController {
         this.serviceProviderModel = serviceProviderModel;
     }
 
-    @GetMapping("/service/getamount")
-    public double getServiceamount(@RequestBody HashMap<String, Objects>Parameters){
-        return serviceProviderModel.getServiceAmount(Parameters);
+    @GetMapping("/{service}")
+    public double getServiceamount(@RequestBody Map<String, String> input){
+        return serviceProviderModel.getServiceAmount(input);
     }
 
-    @PostMapping("/etisalatmobilerecharge/pay/{amount}")
-    public String payEtisalatInternet(@RequestBody CreditCardPayment creditCardPayment
-            ,@PathVariable("amount")double amount){
-        return serviceProviderModel.etisalatInternet(creditCardPayment,amount);
+    @PostMapping("/service/pay/")
+    public String payService(@RequestBody Map<String, String> input){
+        return serviceProviderModel.pay(input);
     }
 }

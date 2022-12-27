@@ -11,8 +11,8 @@ public class BigFactory {
         Services service = null;
         if (choice.equals("EtisalatInternetService"))
                 service = new EtisalatInternetService();
-//        if (choice.equals("2")) // etisalat mobile
-//            service = new EtisalatInternetService();
+        if (choice.equals("EtisalatMobileService")) // etisalat mobile
+            service = new EtisalatMobileService();
 //        if (choice.equals("3")) // vodafone internet
 //            service = new EtisalatInternetService();
 //        if (choice.equals("4")) // vodafone mobile
