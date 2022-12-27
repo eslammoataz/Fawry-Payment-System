@@ -18,10 +18,10 @@ public class FundWalletController {
        return service.fundByCredit(creditCardPayment,amount);
     }
 
-    @PostMapping("/addwallet/wallet/{amount}")
-    public String fundByWallet(@PathVariable("amount")double amount){
-        return service.fundByWallet(amount);
-    }
+//    @PostMapping("/addwallet/wallet/{amount}")
+//    public String fundByWallet(@PathVariable("amount")double amount){
+//        return service.fundByWallet(amount);
+//    }
 
     @GetMapping("/getwallet")
     public double addtowallet(){
