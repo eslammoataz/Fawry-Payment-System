@@ -1,6 +1,11 @@
 package Demo.Payment;
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class Transaction {
- double amount ;
- String userName;
+ public double amount ;
+ public int transactionID;
+public String userName;
 
 }

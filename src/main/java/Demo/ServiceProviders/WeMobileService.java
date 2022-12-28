@@ -10,7 +10,7 @@ public class WeMobileService extends Services {
     }
 
     @Override
-    public String pay(Payment payment, double amount) {
-        return null;
+    public String pay(Payment payment , double _amount) {
+        return payment.pay(_amount);
     }
 }

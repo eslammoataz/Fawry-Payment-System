@@ -7,6 +7,7 @@ public class CashPayment implements Payment{
         Transaction transaction = new Transaction();
         transaction.amount = amount;
         transaction.userName = currentCustomer.username;
+        transaction.transactionID=currentCustomer.transactions.size()+1;
         currentCustomer.transactions.add(transaction);
         return "Payment Done By CashPayment";
     }

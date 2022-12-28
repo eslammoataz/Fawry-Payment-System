@@ -1,8 +1,10 @@
 package Demo.ServiceProviders;
 
 import Demo.Payment.CreditCardPayment;
+import Demo.Payment.Transaction;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -15,7 +17,7 @@ public class ServiceProviderController {
         this.serviceProviderModel = serviceProviderModel;
     }
 
-    @GetMapping("/{service}")
+    @GetMapping("/getserviceamount")
     public double getServiceamount(@RequestBody Map<String, String> input){
         return serviceProviderModel.getServiceAmount(input);
     }
@@ -24,4 +26,15 @@ public class ServiceProviderController {
     public String payService(@RequestBody Map<String, String> input){
         return serviceProviderModel.pay(input);
     }
+
+    @GetMapping("/gettransactions")
+    public ArrayList<Transaction> getTransactions(){
+        return serviceProviderModel.getTransaction();
+    }
+
+    @GetMapping("/getServices")
+    public ArrayList<String> getServices(){
+        return serviceProviderModel.getSerivcesNames();
+    }
+
 }

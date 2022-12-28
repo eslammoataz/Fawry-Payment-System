@@ -11,6 +11,7 @@ public class VodafneMobileService extends Services {
 
     @Override
     public String pay(Payment payment, double amount) {
-        return null;
+
+        return payment.pay(amount);
     }
 }
