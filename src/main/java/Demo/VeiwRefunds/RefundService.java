@@ -4,7 +4,7 @@ import Demo.DataBase;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import static Demo.Login.LoginService.currentCustomer;
+import static Demo.Authentication.AuthenticationSerivce.currentCustomer;
 @Service
 @Component
 public class RefundService {

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Customer {
 
-    public double wallet = 200.0;
+    public double wallet = 0.0;
     //list transactions
     //list refunds
     public String email;

@@ -1,7 +1,6 @@
 package Demo.Payment;
-import org.springframework.stereotype.Component;
 
-import static Demo.Login.LoginService.currentCustomer;
+import static Demo.Authentication.AuthenticationSerivce.currentCustomer;
 //@Component
 public class CreditCardPayment implements Payment{
     String cardNumber;
@@ -17,7 +16,9 @@ public class CreditCardPayment implements Payment{
         Transaction transaction = new Transaction();
         transaction.amount = amount;
         transaction.userName = currentCustomer.username;
+        transaction.transactionID=currentCustomer.transactions.size()+1;
         currentCustomer.transactions.add(transaction);
+        transaction.method="Credit Card Payment";
         return "Payment Done By Credit Card";
     }
 }

@@ -1,4 +1,4 @@
-package Demo.Login;
+package Demo.Authentication;
 
 import Demo.DataBase;
 import Demo.Users.Admin;
@@ -8,11 +8,12 @@ import org.springframework.stereotype.Service;
 
 @Component
 @Service
-public class LoginService {
+public class AuthenticationSerivce {
     DataBase dataBase;
     public static Customer currentCustomer;
+    public static Admin currentAdmin;
 
-    public LoginService(DataBase database) {
+    public AuthenticationSerivce(DataBase database) {
         this.dataBase = database;
     }
 
@@ -58,6 +59,11 @@ public class LoginService {
              return "Customer registered succefully";
         }
         return "Customer account already Exists ";
+    }
+    public String signout(){
+        currentCustomer=null;
+        currentAdmin=null;
+        return "singed out successfully";
     }
 
 }

@@ -6,12 +6,10 @@ import Demo.Payment.PaymentFactory;
 import Demo.Payment.Transaction;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-import static Demo.Login.LoginService.currentCustomer;
+import static Demo.Authentication.AuthenticationSerivce.currentCustomer;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 @Component
 @Service

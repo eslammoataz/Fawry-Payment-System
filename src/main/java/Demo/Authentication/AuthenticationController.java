@@ -1,4 +1,4 @@
-package Demo.Login;
+package Demo.Authentication;
 
 import Demo.Users.Admin;
 import Demo.Users.Customer;
@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class LoginController {
-    LoginService service;
+public class AuthenticationController {
+    AuthenticationSerivce service;
 
 
-    public LoginController(LoginService service) {
+    public AuthenticationController(AuthenticationSerivce service) {
         this.service = service;
     }
     @RequestMapping("/ok")
@@ -37,6 +37,10 @@ public class LoginController {
     @RequestMapping(value = "/customer/login")
     public String adminlogin(@RequestBody Customer customer){
         return service.loginCustomer(customer);
+    }
+    @RequestMapping(value = "/signout")
+    public String signout(){
+       return service.signout();
     }
 
 }

@@ -2,7 +2,6 @@ package Demo.ServiceProviders;
 import Demo.Payment.Payment;
 import org.springframework.stereotype.Component;
 
-import static Demo.Login.LoginService.currentCustomer;
 @Component
 
 public class OrangeMobileService extends Services {

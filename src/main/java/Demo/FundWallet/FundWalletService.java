@@ -4,7 +4,7 @@ import Demo.DataBase;
 import Demo.Payment.CreditCardPayment;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-import static Demo.Login.LoginService.currentCustomer;
+import static Demo.Authentication.AuthenticationSerivce.currentCustomer;
 
 
 @Component
@@ -16,6 +16,7 @@ public class FundWalletService {
         this.dataBase = dataBase;
     }
     public String fundByCredit(CreditCardPayment creditCardPayment ,double amount) {
+        currentCustomer.wallet+=amount;
         return creditCardPayment.pay(amount);
     }
 
