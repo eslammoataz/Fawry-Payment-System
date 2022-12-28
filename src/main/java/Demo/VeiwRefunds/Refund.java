@@ -5,7 +5,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Refund {
-    String state;
+    public String state;
+    public int am;
     Transaction transaction;
 //    ArrayList<Observer> ObserverList = new ArrayList<>();
 
@@ -13,20 +14,4 @@ public class Refund {
         this.transaction = t;
     }
 
-//    @Override
-//    public void add(Observer observer) {
-//        ObserverList.add(observer);
-//    }
-//
-//    @Override
-//    public void remove(Observer observer) {
-//        ObserverList.remove(observer);
-//    }
-//
-//    @Override
-//    public void notifyAllObservers() {
-//        for (Observer i : ObserverList) {
-//            i.update(state);
-//        }
-//    }
 }

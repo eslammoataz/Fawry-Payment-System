@@ -3,6 +3,7 @@ package Demo;
 //import Demo.Users.Customer;
 
 //import Demo.Users.Admin;
+import Demo.Payment.Transaction;
 import Demo.Users.Customer;
 import org.springframework.stereotype.Component;
 import Demo.Users.Admin;
@@ -20,6 +21,13 @@ public class DataBase {
 
 
     public DataBase() {
+        Transaction t1 = new Transaction();
+        t1.method="asdad";
+        t1.amount=213;
+        Refund r = new Refund(t1);
+        r.state="AD";
+        r.am=12;
+        refundRequest.add(r);
         servicesNames.add("Etisalat Mobile Services");
         servicesNames.add("Etisalat Internet Services");
         servicesNames.add("Vodafone Mobile Services");
@@ -73,6 +81,9 @@ public class DataBase {
     }
     public void addRefund(Refund refund) {
         refundRequest.add(refund);
+    }
+    public ArrayList<Refund> getRefundRequest(){
+        return refundRequest;
     }
 
 //    public Admin setAdmin(String email,String password) {

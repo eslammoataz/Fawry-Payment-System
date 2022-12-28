@@ -19,4 +19,8 @@ public class RefundController {
     public String getTransactions(@PathVariable("id") int id){
         return refundService.doRefund(id);
     }
+    @GetMapping("/viewrefundrequests")
+    public ArrayList<Refund> viewRefundRequests(){
+        return refundService.getRefundRequests();
+    }
 }
