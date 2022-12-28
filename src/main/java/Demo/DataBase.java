@@ -2,9 +2,10 @@ package Demo;
 //import Demo.Users.Admin;
 //import Demo.Users.Customer;
 
-import Demo.Users.Admin;
+//import Demo.Users.Admin;
 import Demo.Users.Customer;
 import org.springframework.stereotype.Component;
+import Demo.Users.Admin;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -61,9 +62,7 @@ public class DataBase {
                 customer1 = value;
         return customer1;
     }
-    public void addRefund(Refund refund){
-        refundRequest.add(refund);
-    }
+
 
     public void addCustomer(Customer customer) {
         customers.add(customer);
@@ -71,6 +70,9 @@ public class DataBase {
 
     public ArrayList<String> getServiceNames() {
         return servicesNames;
+    }
+    public void addRefund(Refund refund) {
+        refundRequest.add(refund);
     }
 
 //    public Admin setAdmin(String email,String password) {

@@ -3,7 +3,7 @@ import Demo.Payment.Transaction;
 
 import java.util.ArrayList;
 
-public class Customer implements User {
+public class Customer {
 
     public double wallet = 200.0;
     //list transactions

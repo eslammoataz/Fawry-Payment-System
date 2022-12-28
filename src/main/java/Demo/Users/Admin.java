@@ -1,6 +1,6 @@
 package Demo.Users;
 
-public class Admin implements User {
+public class Admin {
     public String email;
     public String username;
     public String password;
