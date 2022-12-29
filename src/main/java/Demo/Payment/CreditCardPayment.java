@@ -14,13 +14,14 @@ public class CreditCardPayment implements Payment{
     }
 
     @Override
-    public String pay(double amount, Customer currentCustomer){
+    public String pay(double amount, Customer currentCustomer,String serviceName){
         Transaction transaction = new Transaction();
         transaction.amount = amount;
         transaction.setCustomer(currentCustomer);
         transaction.transactionID=currentCustomer.transactions.size()+1;
         currentCustomer.transactions.add(transaction);
         transaction.method="Credit Card Payment";
+        transaction.relatedService=serviceName;
         AuthenticationSerivce.dataBase.usersTransactions.add(transaction);
 
         return "Payment Done By Credit Card";

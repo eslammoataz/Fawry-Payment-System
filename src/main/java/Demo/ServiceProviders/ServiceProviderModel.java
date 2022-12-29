@@ -28,10 +28,9 @@ public class ServiceProviderModel {
     public String pay(Map<String,String>input , String token) {
         //creating customer that will will work on
         Customer customer = dataBase.getCustomerByToken(token);
-
         serviceProvider = factory.create(input.get("ServiceProvider"));
         Payment payment = paymentFactory.create(input.get("paymentmethod"),input);
-        return serviceProvider.pay(payment, Double.parseDouble(input.get("amount")),customer)+" to "+input.get("ServiceProvider");
+        return serviceProvider.pay(payment, Double.parseDouble(input.get("amount")),customer,input.get("ServiceProvider"))+" to "+input.get("ServiceProvider");
     }
 
     public double getServiceAmount(Map<String, String> input) {

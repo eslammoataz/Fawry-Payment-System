@@ -12,7 +12,7 @@ public class OrangeInternetService extends Services{
     }
 
     @Override
-    public String pay(Payment payment, double amount, Customer customer) {
-        return payment.pay(amount,customer);
+    public String pay(Payment payment, double _amount, Customer customer,String serviceName){
+        return payment.pay(_amount ,customer,serviceName);
     }
 }

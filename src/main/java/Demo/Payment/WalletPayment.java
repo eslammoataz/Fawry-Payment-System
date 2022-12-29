@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class WalletPayment implements Payment {
 
     @Override
-    public String pay(double amount, Customer currentCustomer){
+    public String pay(double amount, Customer currentCustomer,String serviceName){
         if(currentCustomer.wallet < amount)
             return "Not enough Wallet balance";
         currentCustomer.wallet-=amount;
@@ -18,6 +18,7 @@ public class WalletPayment implements Payment {
         transaction.transactionID=currentCustomer.transactions.size()+1;
         currentCustomer.transactions.add(transaction);
         transaction.method="Wallet Payment";
+        transaction.relatedService=serviceName;
         AuthenticationSerivce.dataBase.usersTransactions.add(transaction);
         return "Payment Done By Wallet";
     }

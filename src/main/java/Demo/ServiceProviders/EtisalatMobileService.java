@@ -16,8 +16,8 @@ public class EtisalatMobileService extends Services{
     }
 
     @Override
-    public String pay(Payment payment, double _amount, Customer customer){
-        return payment.pay(_amount ,customer);
+    public String pay(Payment payment, double _amount, Customer customer,String serviceName){
+        return payment.pay(_amount ,customer,serviceName);
     }
 
 }

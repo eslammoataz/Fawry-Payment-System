@@ -12,7 +12,7 @@ public abstract class Services {
 //    public String display(){
 //        return "kareem amin";
 //    }
-    public abstract String pay(Payment payment , double amount , Customer customer);
+    public abstract String pay(Payment payment , double amount , Customer customer ,String serviceName);
 
 //    public void setForm();
 

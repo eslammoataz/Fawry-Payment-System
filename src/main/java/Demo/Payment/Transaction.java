@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
+import java.security.PublicKey;
+
 @Component
 public class Transaction {
     public double amount;
@@ -14,6 +16,8 @@ public class Transaction {
     public int transactionID;
 
     public Customer customer;
+
+    public String relatedService;
 
     public void setCustomer(Customer customer) {
         this.customer = new Customer(customer.email,customer.username,customer.password);
