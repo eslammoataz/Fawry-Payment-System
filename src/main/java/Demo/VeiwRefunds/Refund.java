@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
-
+//making setter and geter so spring can access to log it on screen
 @Component
 @Getter
 @Setter
