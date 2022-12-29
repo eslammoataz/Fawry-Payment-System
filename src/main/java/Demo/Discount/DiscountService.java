@@ -2,6 +2,7 @@ package Demo.Discount;
 
 import Demo.DataBase;
 import Demo.Users.Admin;
+import Demo.Users.Customer;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +30,8 @@ public class DiscountService {
         }
        return "Discount added successfully";
    }
-   public ArrayList<Discount> viewDiscounts(){
+   public ArrayList<Discount> viewDiscounts(String token){
+       Customer customer = dataBase.getCustomerByToken(token);
         return dataBase.discounts;
    }
 

@@ -120,34 +120,4 @@ public class DataBase {
     }
 
 
-//    public Admin setAdmin(String email,String password) {
-//        Admin tempAdmin = null;
-//        for (Admin value : admins)
-//            if (value.email.equals(email) && value.password.equals(password))
-//                tempAdmin = value;
-//        return tempAdmin;
-//    }
-//
-//
-
-//
-
-//    public Customer getCustomer(String email, String password) {
-//        Customer c = null;
-//        for (Customer value : customers)
-//            if (value.email.equals(email) && value.password.equals(password))
-//                c= value;
-//        return c;
-//    }
-//    public Admin getAdmin(String email, String password) {
-//        Admin c = null;
-//        for (Admin value : admins)
-//            if (value.email.equals(email) && value.password.equals(password))
-//                c= value;
-//        return c;
-//    }
-//    public void addDiscount(Discount discount) {
-//        discounts.add(discount);
-//    }
-
 }

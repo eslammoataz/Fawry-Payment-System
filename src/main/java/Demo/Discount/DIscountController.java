@@ -18,8 +18,8 @@ public class DIscountController {
     }
 
     @GetMapping("/viewdiscount")
-    public ArrayList<Discount> addDiscount(){
-        return service.viewDiscounts();
+    public ArrayList<Discount> addDiscount(@RequestHeader("Authorization") String token){
+        return service.viewDiscounts(token);
     }
 
 }
