@@ -1,5 +1,6 @@
 package Demo.Users;
 import Demo.Payment.Transaction;
+import Demo.VeiwRefunds.Refund;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,6 +18,7 @@ public class Customer extends User {
     //list transactions
     //list refunds
     public ArrayList<Transaction> transactions = new ArrayList<>();
+    public ArrayList<Refund> refunds = new ArrayList<>();
 
     public Customer(String _email, String _userName, String _password) {
         this.email = _email;

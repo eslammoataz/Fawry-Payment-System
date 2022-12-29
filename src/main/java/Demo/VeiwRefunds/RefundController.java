@@ -25,7 +25,13 @@ public class RefundController {
     @GetMapping("/refund/{id}/{state}")
     public String viewRefundRequests(@RequestHeader("Authorization") String token,@PathVariable("id") int id
             ,@PathVariable("state") String state){
-        return refundService.refundDeal(token,id,state);
+        return refundService.refundDeal(token,id-1,state);
     }
+
+    @GetMapping("/customer/refundrequests")
+    public ArrayList<Refund> viewCustomerRefunds(@RequestHeader("Authorization") String token){
+        return refundService.customerGetRefunds(token);
+    }
+
 
 }

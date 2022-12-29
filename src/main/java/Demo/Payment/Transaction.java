@@ -15,4 +15,7 @@ public class Transaction {
 
     Customer customer;
 
+    public Customer Customergetter() {
+        return customer;
+    }
 }
