@@ -3,6 +3,8 @@ package Demo;
 //import Demo.Users.Customer;
 
 //import Demo.Users.Admin;
+import Demo.Discount.Discount;
+import Demo.Discount.SpecificDiscount;
 import Demo.Users.Customer;
 import Demo.Users.User;
 import org.springframework.stereotype.Component;
@@ -18,7 +20,7 @@ public class DataBase {
     ArrayList<Admin> admins = new ArrayList<>();
     ArrayList<Customer> customers = new ArrayList<>();
     ArrayList<String> servicesNames = new ArrayList<>();
-//    ArrayList<Discount> discounts = new ArrayList<>();
+    public ArrayList<Discount> discounts = new ArrayList<>();
     public ArrayList<Refund> refundRequest = new ArrayList<>();
 
 
@@ -99,6 +101,22 @@ public class DataBase {
             i++;
         }
         return messege;
+    }
+
+    public Customer getCustomerByToken(String token){
+        //creating customer that will will work on
+        char charindex =token.charAt(token.length()-1);
+        String indx =""+charindex;
+        Customer customer = getCustomer(Integer.parseInt(indx));
+        return customer;
+    }
+
+    public Admin getAdminByToken(String token){
+        //creating customer that will will work on
+        char charindex =token.charAt(token.length()-1);
+        String indx =""+charindex;
+        Admin admin = getAdmin(Integer.parseInt(indx));
+        return admin;
     }
 
 

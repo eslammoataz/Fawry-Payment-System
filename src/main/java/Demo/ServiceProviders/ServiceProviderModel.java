@@ -27,7 +27,7 @@ public class ServiceProviderModel {
 
     public String pay(Map<String,String>input , String token) {
         //creating customer that will will work on
-        Customer customer = getCustomerByToken(token);
+        Customer customer = dataBase.getCustomerByToken(token);
 
         serviceProvider = factory.create(input.get("ServiceProvider"));
         Payment payment = paymentFactory.create(input.get("paymentmethod"),input);
@@ -41,20 +41,13 @@ public class ServiceProviderModel {
 
     public ArrayList<Transaction> getTransaction(String token){
         //creating customer that will will work on
-        Customer customer = getCustomerByToken(token);
+        Customer customer = dataBase.getCustomerByToken(token);
         return customer.transactions;
     }
     public ArrayList<String> getSerivcesNames(){
         return dataBase.getServiceNames();
     }
 
-    public Customer getCustomerByToken(String token){
-        //creating customer that will will work on
-        char charindex =token.charAt(token.length()-1);
-        String indx =""+charindex;
-        Customer customer = dataBase.getCustomer(Integer.parseInt(indx));
-        return customer;
-    }
 
 
 }
