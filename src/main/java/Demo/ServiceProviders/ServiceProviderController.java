@@ -23,13 +23,13 @@ public class ServiceProviderController {
     }
 
     @PostMapping("/service/pay")
-    public String payService(@RequestBody Map<String, String> input){
-        return serviceProviderModel.pay(input);
+    public String payService(@RequestHeader("Authorization") String token,@RequestBody Map<String, String> input){
+        return serviceProviderModel.pay(input,token);
     }
 
     @GetMapping("/gettransactions")
-    public ArrayList<Transaction> getTransactions(){
-        return serviceProviderModel.getTransaction();
+    public ArrayList<Transaction> getTransactions(@RequestHeader("Authorization") String token){
+        return serviceProviderModel.getTransaction(token);
     }
 
     @GetMapping("/getServices")

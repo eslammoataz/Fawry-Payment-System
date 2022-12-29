@@ -3,14 +3,11 @@ import Demo.Payment.Transaction;
 
 import java.util.ArrayList;
 
-public class Customer {
+public class Customer extends User {
 
     public double wallet = 0.0;
     //list transactions
     //list refunds
-    public String email;
-    public  String username;
-    public  String password;
     public ArrayList<Transaction> transactions = new ArrayList<>();
 
     public Customer(String _email, String _userName, String _password) {

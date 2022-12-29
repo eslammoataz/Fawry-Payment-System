@@ -13,9 +13,10 @@ public class FundWalletController {
     }
 
     @PostMapping("/addwallet/creditcard/{amount}")
-    public String fundWalletCreditCard(@RequestBody CreditCardPayment creditCardPayment
+    public String fundWalletCreditCard(@RequestHeader("Authorization") String token, @RequestBody CreditCardPayment creditCardPayment
             ,@PathVariable("amount")double amount){
-       return service.fundByCredit(creditCardPayment,amount);
+
+       return service.fundByCredit(creditCardPayment,amount,token);
     }
 
 //    @PostMapping("/addwallet/wallet/{amount}")
@@ -24,7 +25,7 @@ public class FundWalletController {
 //    }
 
     @GetMapping("/getwallet")
-    public double addtowallet(){
-        return service.getWalletBalance();
+    public double addtowallet(@RequestHeader("Authorization") String token){
+        return service.getWalletBalance(token);
     }
 }

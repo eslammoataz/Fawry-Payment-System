@@ -1,9 +1,7 @@
 package Demo.Users;
 
-public class Admin {
-    public String email;
-    public String username;
-    public String password;
+public class Admin  extends  User{
+
 
     public Admin(String _email, String _userName, String _password) {
         this.email = _email;

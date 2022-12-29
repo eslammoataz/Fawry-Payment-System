@@ -1,9 +1,11 @@
 package Demo.Payment;
-import static Demo.Authentication.AuthenticationSerivce.currentCustomer;
+import Demo.Users.Customer;
+
+
 public class CashPayment implements Payment{
 
     @Override
-    public String pay( double amount) {
+    public String pay(double amount, Customer currentCustomer) {
         Transaction transaction = new Transaction();
         transaction.amount = amount;
         transaction.userName = currentCustomer.username;

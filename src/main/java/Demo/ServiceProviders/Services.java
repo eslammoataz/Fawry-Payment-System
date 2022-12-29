@@ -1,6 +1,7 @@
 package Demo.ServiceProviders;
 
 import Demo.Payment.Payment;
+import Demo.Users.Customer;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -11,7 +12,7 @@ public abstract class Services {
 //    public String display(){
 //        return "kareem amin";
 //    }
-    public abstract String pay(Payment payment , double amount);
+    public abstract String pay(Payment payment , double amount , Customer customer);
 
 //    public void setForm();
 

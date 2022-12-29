@@ -10,8 +10,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class AuthenticationSerivce {
     DataBase dataBase;
-    public static Customer currentCustomer;
-    public static Admin currentAdmin;
 
     public AuthenticationSerivce(DataBase database) {
         this.dataBase = database;
@@ -22,8 +20,8 @@ public class AuthenticationSerivce {
         Boolean ok = dataBase.checkAdmin(admin);
 
         if(ok){
-//            currentAdmin.setAdmin(admin);
-            return "Admin logged succefully";
+            String messege = dataBase.getTokenAdmin(admin);
+            return "Admin logged succefully , use this token with every request :  "+messege;
         }
         return "No such Admin Account , Check your inputs";
     }
@@ -45,8 +43,8 @@ public class AuthenticationSerivce {
     public String loginCustomer(Customer customer) {
         Boolean ok = dataBase.checkCustomer(customer);
         if(ok){
-            currentCustomer = dataBase.getCustomer(customer);
-            return "Customer logged succefully";
+            String messege = dataBase.getTokenCustomer(customer);
+            return "Customer logged succefully , use this token with every request :  "+messege;
         }
         return "No such Customer Account , Check your inputs";
 
@@ -61,9 +59,8 @@ public class AuthenticationSerivce {
         return "Customer account already Exists ";
     }
     public String signout(){
-        currentCustomer=null;
-        currentAdmin=null;
         return "singed out successfully";
     }
+
 
 }

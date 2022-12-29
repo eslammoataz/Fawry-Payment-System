@@ -2,10 +2,7 @@ package Demo.Authentication;
 
 import Demo.Users.Admin;
 import Demo.Users.Customer;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class AuthenticationController {
@@ -30,12 +27,12 @@ public class AuthenticationController {
     }
 
     @PostMapping(value = "/customer/register")
-    public String adminregister(@RequestBody Customer customer){
+    public String customerRegister(@RequestBody Customer customer){
         return service.registerCustomer(customer);
     }
 
     @RequestMapping(value = "/customer/login")
-    public String adminlogin(@RequestBody Customer customer){
+    public String customerLogin(@RequestBody Customer customer){
         return service.loginCustomer(customer);
     }
     @RequestMapping(value = "/signout")

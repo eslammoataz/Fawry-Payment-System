@@ -3,13 +3,15 @@ package Demo;
 //import Demo.Users.Customer;
 
 //import Demo.Users.Admin;
-import Demo.Payment.Transaction;
 import Demo.Users.Customer;
+import Demo.Users.User;
 import org.springframework.stereotype.Component;
 import Demo.Users.Admin;
 
+import java.lang.reflect.GenericDeclaration;
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Objects;
+
 import Demo.VeiwRefunds.Refund;
 @Component
 public class DataBase {
@@ -55,13 +57,11 @@ public class DataBase {
         return false;
     }
 
-    public Customer getCustomer(Customer customer) {
-        Customer customer1 = null;
-        for (Customer value : customers)
-            if (value.email.equals(customer.email) && value.password.equals(customer.password)
-                    && value.username.equals(customer.username))
-                customer1 = value;
-        return customer1;
+    public Customer getCustomer(int index) {
+        return customers.get(index);
+    }
+    public Admin getAdmin(int index) {
+        return admins.get(index);
     }
 
 
@@ -78,6 +78,29 @@ public class DataBase {
     public ArrayList<Refund> getRefundRequest(){
         return refundRequest;
     }
+    public String getTokenCustomer(Customer customer){
+        int i=0;
+        String messege=null;
+        for (Customer value : customers){
+            if (value.email.equals(customer.email) && value.password.equals(customer.password)
+                    && value.username.equals(customer.username))
+                messege="Db/Customerlogin/Authen/token=154?#2%3-"+i;
+            i++;
+        }
+        return messege;
+    }
+    public String getTokenAdmin(Admin admin){
+        int i=0;
+        String messege=null;
+        for (Admin value : admins){
+            if (value.email.equals(admin.email) && value.password.equals(admin.password) &&
+                    value.username.equals(admin.username))
+                messege="Db/Adminlogin/Authen/token=154?#2%131-"+i;
+            i++;
+        }
+        return messege;
+    }
+
 
 //    public Admin setAdmin(String email,String password) {
 //        Admin tempAdmin = null;

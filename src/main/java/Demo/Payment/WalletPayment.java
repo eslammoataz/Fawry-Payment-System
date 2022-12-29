@@ -1,12 +1,13 @@
 package Demo.Payment;
+import Demo.Users.Customer;
 import org.springframework.stereotype.Component;
 
-import static Demo.Authentication.AuthenticationSerivce.currentCustomer;
+
 @Component
 public class WalletPayment implements Payment {
 
     @Override
-    public String pay( double amount) {
+    public String pay(double amount, Customer currentCustomer){
         if(currentCustomer.wallet < amount)
             return "Not enough Wallet balance";
         currentCustomer.wallet-=amount;
