@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Component
 @Service
 public class AuthenticationSerivce {
-    DataBase dataBase;
+    public static DataBase dataBase;
 
     public AuthenticationSerivce(DataBase database) {
         this.dataBase = database;

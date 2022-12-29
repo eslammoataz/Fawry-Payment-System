@@ -1,15 +1,13 @@
 package Demo.Users;
 import Demo.Payment.Transaction;
-import Demo.VeiwRefunds.Refund;
+import Demo.AdminResponsabilities.VeiwRefunds.Refund;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 @Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Customer extends User {
@@ -26,6 +24,17 @@ public class Customer extends User {
         this.password = _password;
     }
 
+    public double getWallet() {
+        return wallet;
+    }
+
+    public ArrayList<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public ArrayList<Refund> getRefunds() {
+        return refunds;
+    }
 //    public void viewDiscounts(DataBase dataBase) {
 //        int c = 1;
 //        for (Discount discount : dataBase.discounts) {

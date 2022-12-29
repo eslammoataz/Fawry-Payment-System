@@ -1,5 +1,6 @@
 package Demo.Payment;
 
+import Demo.Authentication.AuthenticationSerivce;
 import Demo.Users.Customer;
 
 //@Component
@@ -16,10 +17,12 @@ public class CreditCardPayment implements Payment{
     public String pay(double amount, Customer currentCustomer){
         Transaction transaction = new Transaction();
         transaction.amount = amount;
-        transaction.customer=currentCustomer;
+        transaction.setCustomer(currentCustomer);
         transaction.transactionID=currentCustomer.transactions.size()+1;
         currentCustomer.transactions.add(transaction);
         transaction.method="Credit Card Payment";
+        AuthenticationSerivce.dataBase.usersTransactions.add(transaction);
+
         return "Payment Done By Credit Card";
     }
 }

@@ -1,12 +1,12 @@
-package Demo.VeiwRefunds;//package Demo.VeiwRefunds;
+package Demo.AdminResponsabilities.VeiwRefunds;//package Demo.VeiwRefunds;
 
 import Demo.DataBase;
+import Demo.Payment.Transaction;
 import Demo.Users.Admin;
 import Demo.Users.Customer;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import java.sql.Ref;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -59,11 +59,15 @@ public class RefundService {
     }
 
     public ArrayList<Refund> customerGetRefunds(String token) {
-        char charindex =token.charAt(token.length()-1);
-        String indx =""+charindex;
-        Customer customer = dataBase.getCustomer(Integer.parseInt(indx));
+        Customer customer = dataBase.getCustomerByToken(token);
         if(Objects.nonNull(customer))
             return customer.refunds;
         return null;
     }
+
+    public ArrayList<Transaction> getCustomersTransactions(String token) {
+        Admin admin = dataBase.getAdminByToken(token);
+        return dataBase.usersTransactions;
+    }
+
 }

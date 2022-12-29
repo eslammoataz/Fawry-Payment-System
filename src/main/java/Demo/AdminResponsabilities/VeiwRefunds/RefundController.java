@@ -1,4 +1,4 @@
-package Demo.VeiwRefunds;
+package Demo.AdminResponsabilities.VeiwRefunds;
 
 import Demo.Payment.Transaction;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +23,7 @@ public class RefundController {
     }
 
     @GetMapping("/refund/{id}/{state}")
-    public String viewRefundRequests(@RequestHeader("Authorization") String token,@PathVariable("id") int id
+    public String DealwithRefund(@RequestHeader("Authorization") String token,@PathVariable("id") int id
             ,@PathVariable("state") String state){
         return refundService.refundDeal(token,id-1,state);
     }
@@ -31,6 +31,10 @@ public class RefundController {
     @GetMapping("/customer/refundrequests")
     public ArrayList<Refund> viewCustomerRefunds(@RequestHeader("Authorization") String token){
         return refundService.customerGetRefunds(token);
+    }
+    @GetMapping("/usersTransactions")
+    public ArrayList<Transaction> getUsersTransactions(@RequestHeader("Authorization") String token){
+        return refundService.getCustomersTransactions(token);
     }
 
 

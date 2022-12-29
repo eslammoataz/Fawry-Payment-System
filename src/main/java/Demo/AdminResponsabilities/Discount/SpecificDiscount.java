@@ -1,4 +1,4 @@
-package Demo.Discount;
+package Demo.AdminResponsabilities.Discount;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,12 +11,11 @@ import org.springframework.stereotype.Component;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class OverallDiscount implements Discount {
+public class SpecificDiscount implements Discount {
+    public Double discountAmount = 0.5;
+    public String discountName = "Specific Discount";
 
-    public Double discountAmount = 0.75;
-    public String discountName = "Overall Discount";
-
-    public OverallDiscount(Double discountAmount) {
+    public SpecificDiscount(Double discountAmount) {
         this.discountAmount = discountAmount;
     }
 

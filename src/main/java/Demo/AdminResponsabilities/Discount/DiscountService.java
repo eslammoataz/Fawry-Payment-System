@@ -1,4 +1,4 @@
-package Demo.Discount;
+package Demo.AdminResponsabilities.Discount;
 
 import Demo.DataBase;
 import Demo.Users.Admin;

@@ -3,18 +3,15 @@ package Demo;
 //import Demo.Users.Customer;
 
 //import Demo.Users.Admin;
-import Demo.Discount.Discount;
-import Demo.Discount.SpecificDiscount;
+import Demo.AdminResponsabilities.Discount.Discount;
+import Demo.Payment.Transaction;
 import Demo.Users.Customer;
-import Demo.Users.User;
 import org.springframework.stereotype.Component;
 import Demo.Users.Admin;
 
-import java.lang.reflect.GenericDeclaration;
 import java.util.ArrayList;
-import java.util.Objects;
 
-import Demo.VeiwRefunds.Refund;
+import Demo.AdminResponsabilities.VeiwRefunds.Refund;
 @Component
 public class DataBase {
     ArrayList<Admin> admins = new ArrayList<>();
@@ -22,6 +19,7 @@ public class DataBase {
     ArrayList<String> servicesNames = new ArrayList<>();
     public ArrayList<Discount> discounts = new ArrayList<>();
     public ArrayList<Refund> refundRequest = new ArrayList<>();
+    public ArrayList<Transaction> usersTransactions = new ArrayList<>();
 
 
     public DataBase() {
@@ -86,7 +84,7 @@ public class DataBase {
         for (Customer value : customers){
             if (value.email.equals(customer.email) && value.password.equals(customer.password)
                     && value.username.equals(customer.username))
-                messege="Db/Customerlogin/Authen/token=154?#2%3-"+i;
+                messege="Customer-f2a294fa-0ecb-46c8-a439-f47125255608-"+i;
             i++;
         }
         return messege;
@@ -97,7 +95,7 @@ public class DataBase {
         for (Admin value : admins){
             if (value.email.equals(admin.email) && value.password.equals(admin.password) &&
                     value.username.equals(admin.username))
-                messege="Db/Adminlogin/Authen/token=154?#2%131-"+i;
+                messege="Admin-f2a294fa-0ecb-46c8-a439-f47125255608-"+i;
             i++;
         }
         return messege;

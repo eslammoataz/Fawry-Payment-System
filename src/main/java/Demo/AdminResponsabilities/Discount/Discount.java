@@ -1,4 +1,4 @@
-package Demo.Discount;
+package Demo.AdminResponsabilities.Discount;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

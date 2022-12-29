@@ -1,6 +1,5 @@
-package Demo.Discount;
+package Demo.AdminResponsabilities.Discount;
 
-import Demo.Payment.CreditCardPayment;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;

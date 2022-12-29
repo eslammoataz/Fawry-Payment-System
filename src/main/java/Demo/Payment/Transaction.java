@@ -13,7 +13,11 @@ public class Transaction {
     public String method;
     public int transactionID;
 
-    Customer customer;
+    public Customer customer;
+
+    public void setCustomer(Customer customer) {
+        this.customer = new Customer(customer.email,customer.username,customer.password);
+    }
 
     public Customer Customergetter() {
         return customer;
