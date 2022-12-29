@@ -1,5 +1,4 @@
 package Demo.VeiwRefunds;//package Demo.VeiwRefunds;
-import java.util.ArrayList;
 import Demo.Payment.Transaction;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,12 +12,13 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Refund {
-    String state;
+    String state = "Pending";
     Transaction transaction;
-//    ArrayList<Observer> ObserverList = new ArrayList<>();
+    int refundID;
 
-    public Refund(Transaction t) {
+    public Refund(Transaction t , int refundID) {
         this.transaction = t;
+        this.refundID = refundID;
     }
 
 }

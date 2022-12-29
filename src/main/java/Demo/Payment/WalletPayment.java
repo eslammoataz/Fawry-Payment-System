@@ -13,7 +13,7 @@ public class WalletPayment implements Payment {
         currentCustomer.wallet-=amount;
         Transaction transaction = new Transaction();
         transaction.amount = amount;
-        transaction.userName = currentCustomer.username;
+        transaction.customer=currentCustomer;
         transaction.transactionID=currentCustomer.transactions.size()+1;
         currentCustomer.transactions.add(transaction);
         transaction.method="Wallet Payment";

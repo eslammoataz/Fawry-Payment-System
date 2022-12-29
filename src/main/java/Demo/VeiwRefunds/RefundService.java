@@ -6,6 +6,7 @@ import Demo.Users.Customer;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.sql.Ref;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -26,7 +27,7 @@ public class RefundService {
 
         if (id > customer.transactions.size())
             return "No Transactions under this ID";
-        Refund r = new Refund(customer.transactions.get(id - 1));
+        Refund r = new Refund(customer.transactions.get(id - 1) , dataBase.getRefundRequest().size()+1);
         dataBase.addRefund(r);
         return "Refund Request Done Successfully , now wait for approval";
     }
@@ -37,6 +38,16 @@ public class RefundService {
         Admin admin = dataBase.getAdmin(Integer.parseInt(indx));
         if(Objects.nonNull(admin))
              return dataBase.getRefundRequest();
+        return null;
+    }
+    public String refundDeal (String token,int id , String state) {
+        char charindex =token.charAt(token.length()-1);
+        String indx =""+charindex;
+        Admin admin = dataBase.getAdmin(Integer.parseInt(indx));
+        if(Objects.nonNull(admin)){
+            Refund r = dataBase.refundRequest.get(id);
+            r.state=state;
+        }
         return null;
     }
 }

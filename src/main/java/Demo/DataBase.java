@@ -19,7 +19,7 @@ public class DataBase {
     ArrayList<Customer> customers = new ArrayList<>();
     ArrayList<String> servicesNames = new ArrayList<>();
 //    ArrayList<Discount> discounts = new ArrayList<>();
-    ArrayList<Refund> refundRequest = new ArrayList<>();
+    public ArrayList<Refund> refundRequest = new ArrayList<>();
 
 
     public DataBase() {

@@ -1,8 +1,16 @@
 package Demo.Users;
 import Demo.Payment.Transaction;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Customer extends User {
 
     public double wallet = 0.0;

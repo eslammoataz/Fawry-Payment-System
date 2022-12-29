@@ -1,10 +1,7 @@
 package Demo.VeiwRefunds;
 
 import Demo.Payment.Transaction;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 @RestController
@@ -24,4 +21,11 @@ public class RefundController {
     public ArrayList<Refund> viewRefundRequests(@RequestHeader("Authorization") String token){
         return refundService.getRefundRequests( token);
     }
+
+    @GetMapping("/refund/{id}/{state}")
+    public String viewRefundRequests(@RequestHeader("Authorization") String token,@PathVariable("id") int id
+            ,@PathVariable("state") String state){
+        return refundService.refundDeal(token,id,state);
+    }
+
 }

@@ -8,7 +8,7 @@ public class CashPayment implements Payment{
     public String pay(double amount, Customer currentCustomer) {
         Transaction transaction = new Transaction();
         transaction.amount = amount;
-        transaction.userName = currentCustomer.username;
+        transaction.customer=currentCustomer;
         transaction.transactionID=currentCustomer.transactions.size()+1;
         transaction.method="Cash Payment";
         currentCustomer.transactions.add(transaction);

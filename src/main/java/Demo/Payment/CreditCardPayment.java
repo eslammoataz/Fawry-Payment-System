@@ -16,7 +16,7 @@ public class CreditCardPayment implements Payment{
     public String pay(double amount, Customer currentCustomer){
         Transaction transaction = new Transaction();
         transaction.amount = amount;
-        transaction.userName = currentCustomer.username;
+        transaction.customer=currentCustomer;
         transaction.transactionID=currentCustomer.transactions.size()+1;
         currentCustomer.transactions.add(transaction);
         transaction.method="Credit Card Payment";
