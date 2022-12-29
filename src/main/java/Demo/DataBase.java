@@ -21,13 +21,6 @@ public class DataBase {
 
 
     public DataBase() {
-        Transaction t1 = new Transaction();
-        t1.method="asdad";
-        t1.amount=213;
-        Refund r = new Refund(t1);
-        r.state="AD";
-        r.am=12;
-        refundRequest.add(r);
         servicesNames.add("Etisalat Mobile Services");
         servicesNames.add("Etisalat Internet Services");
         servicesNames.add("Vodafone Mobile Services");
