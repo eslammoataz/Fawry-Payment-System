@@ -11,7 +11,7 @@ public class EtisalatInternetService extends Services {
     }
 
     @Override
-    public String pay(Payment payment, double amount, Customer customer,String serviceName) {
+    public String servicePay(Payment payment, double amount, Customer customer, String serviceName) {
         return payment.pay(amount,customer,serviceName);
     }
 
