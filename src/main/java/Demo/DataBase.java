@@ -11,7 +11,7 @@ import Demo.Users.Admin;
 
 import java.util.ArrayList;
 
-import Demo.AdminResponsabilities.VeiwRefunds.Refund;
+import Demo.AdminResponsabilities.DealWithRefund.Refund;
 @Component
 public class DataBase {
     ArrayList<Admin> admins = new ArrayList<>();

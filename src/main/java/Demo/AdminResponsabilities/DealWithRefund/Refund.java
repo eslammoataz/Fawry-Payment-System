@@ -1,4 +1,4 @@
-package Demo.AdminResponsabilities.VeiwRefunds;//package Demo.VeiwRefunds;
+package Demo.AdminResponsabilities.DealWithRefund;//package Demo.VeiwRefunds;
 import Demo.Payment.Transaction;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,4 +21,7 @@ public class Refund {
         this.refundID = refundID;
     }
 
+    public Transaction transactionGetter() {
+        return transaction;
+    }
 }

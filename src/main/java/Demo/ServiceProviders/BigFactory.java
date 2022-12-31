@@ -9,29 +9,28 @@ public class BigFactory {
 
     public Services create(String choice) { // choice = service name
         Services service = null;
-        if (choice.equals("EtisalatInternetService"))
-                service = new EtisalatInternetService();
-        if (choice.equals("EtisalatMobileService")) // etisalat mobile
-            service = new EtisalatMobileService();
-//        if (choice.equals("3")) // vodafone internet
-//            service = new EtisalatInternetService();
-//        if (choice.equals("4")) // vodafone mobile
-//            service = new EtisalatInternetService();
-//        if (choice.equals("5")) // we mobile
-//            service = new EtisalatInternetService();
-//        if (choice.equals("6")) // we internet
-//            service = new EtisalatInternetService();
-//        if (choice.equals("7")) // orange internet
-//            service = new EtisalatInternetService();
-//        if (choice.equals("8")) // orange mobile
-//            service = new EtisalatInternetService();
-//        if (choice.equals("9")) // landlinequarter
-//            service = new EtisalatInternetService();
-//        if (choice.equals("10")) // landline month
-//            service = new EtisalatInternetService();
-//        if (choice.equals("11")) // donations
-//            service = new EtisalatInternetService();
-
+        if (choice.equals("Etisalat Mobile Services"))
+                service = new EtisalatMobileService();
+        if (choice.equals("Etisalat Internet Services")) // etisalat mobile
+            service = new EtisalatInternetService();
+        if (choice.equals("Vodafone Mobile Services")) // vodafone internet
+            service = new VodafneMobileService();
+        if (choice.equals("Vodafone Internet Services")) // vodafone mobile
+            service = new VodafoneInternetService();
+        if (choice.equals("WE Mobile Services")) // we mobile
+            service = new WeMobileService();
+        if (choice.equals("WE Internet Services")) // we internet
+            service = new WeInternetService();
+        if (choice.equals("Orange Mobile Services")) // orange internet
+            service = new OrangeMobileService();
+        if (choice.equals("Orange Internet Services")) // orange mobile
+            service = new OrangeInternetService();
+        if (choice.equals("Landline Montly Rciept")) // landlinequarter
+            service = new LandlineMonthlyRecipetService();
+        if (choice.equals("Landline Quarter Rciept")) // landline month
+            service = new LandlineQuarterRecieptService();
+        if (choice.equals("Donation Services")) // donations
+            service = new DonationService();
         return service;
     }
 }

@@ -1,4 +1,4 @@
-package Demo.AdminResponsabilities.VeiwRefunds;
+package Demo.AdminResponsabilities.DealWithRefund;
 
 import Demo.Payment.Transaction;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +17,7 @@ public class RefundController {
     public String getTransactions(@RequestHeader("Authorization") String token, @PathVariable("id") int id){
         return refundService.doRefund(id , token);
     }
-    @GetMapping("/viewrefundrequests")
+    @GetMapping("/admin/viewrefundrequests")
     public ArrayList<Refund> viewRefundRequests(@RequestHeader("Authorization") String token){
         return refundService.getRefundRequests( token);
     }
