@@ -15,7 +15,7 @@ public class WalletPayment implements Payment {
             return "Not enough Wallet balance";
         currentCustomer.wallet-=amount;
         Transaction transaction = new Transaction();
-        transaction.amount = amount;
+        transaction.amount =-amount;
 //        transaction.setCustomer(currentCustomer);
         transaction.transactionID=currentCustomer.transactions.size()+1;
         transaction.customerID=dataBase.getCustomerID(currentCustomer);

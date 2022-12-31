@@ -15,7 +15,6 @@ public class FundWalletController {
     @PostMapping("/addwallet/creditcard/{amount}")
     public String fundWalletCreditCard(@RequestHeader("Authorization") String token, @RequestBody CreditCardPayment creditCardPayment
             ,@PathVariable("amount")double amount){
-
        return service.fundByCredit(creditCardPayment,amount,token);
     }
 

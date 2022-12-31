@@ -61,7 +61,9 @@ public class RefundService {
             t.customerID=r.transaction.customerID;
             t.method=r.transaction.method;
             t.amount *= -1;
-            t.relatedService = "Fund request";
+            t.relatedService = "Refund request was accepted";
+            if(r.transaction.method.equals("Wallet Payment"))
+                customer.wallet+=Math.abs(r.transaction.amount);
             customer.transactions.add(t);
         }
         return "Refund state updated to " + state;
