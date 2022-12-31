@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 @Component
-public class BigFactory {
+public class ServiceFactory {
     Scanner cin = new Scanner(System.in);
 
     public Services create(String choice) { // choice = service name

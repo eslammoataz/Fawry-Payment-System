@@ -4,7 +4,7 @@ import Demo.DataBase;
 import Demo.Payment.Payment;
 import Demo.Payment.PaymentFactory;
 import Demo.Payment.Transaction;
-import Demo.ServiceProviders.BigFactory;
+import Demo.ServiceProviders.ServiceFactory;
 import Demo.ServiceProviders.Services;
 import Demo.Users.Customer;
 import org.springframework.stereotype.Component;
@@ -17,11 +17,11 @@ import java.util.Map;
 @Service
 public class ServiceProviderModel {
     Services serviceProvider;
-    BigFactory factory;
+    ServiceFactory factory;
     PaymentFactory paymentFactory;
     DataBase dataBase;
 
-    public ServiceProviderModel(BigFactory factory , DataBase dataBase) {
+    public ServiceProviderModel(ServiceFactory factory , DataBase dataBase) {
         this.factory = factory;
         this.dataBase=dataBase;
         this.paymentFactory = new PaymentFactory();
