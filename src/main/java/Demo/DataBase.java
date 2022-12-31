@@ -13,13 +13,13 @@ import java.util.ArrayList;
 
 import Demo.AdminResponsabilities.DealWithRefund.Refund;
 @Component
-public class DataBase {
-    ArrayList<Admin> admins = new ArrayList<>();
-    ArrayList<Customer> customers = new ArrayList<>();
-    ArrayList<String> servicesNames = new ArrayList<>();
-    public ArrayList<Discount> discounts = new ArrayList<>();
-    public ArrayList<Refund> refundRequest = new ArrayList<>();
-    public ArrayList<Transaction> usersTransactions = new ArrayList<>();
+public class  DataBase {
+    static ArrayList<Admin> admins = new ArrayList<>();
+    static ArrayList<Customer> customers = new ArrayList<>();
+    static ArrayList<String> servicesNames = new ArrayList<>();
+    static public ArrayList<Discount> discounts = new ArrayList<>();
+    static public ArrayList<Refund> refundRequest = new ArrayList<>();
+    static  public ArrayList<Transaction> usersTransactions = new ArrayList<>();
 
 
     public DataBase() {
@@ -55,13 +55,6 @@ public class DataBase {
                     && value.username.equals(customer.username))
                 return true;
         return false;
-    }
-
-    public Customer getCustomer(int index) {
-        return customers.get(index);
-    }
-    public Admin getAdmin(int index) {
-        return admins.get(index);
     }
 
 
@@ -108,7 +101,9 @@ public class DataBase {
         Customer customer = getCustomer(Integer.parseInt(indx));
         return customer;
     }
-
+    public Customer getCustomer(int index) {
+        return customers.get(index);
+    }
     public Admin getAdminByToken(String token){
         //creating customer that will will work on
         char charindex =token.charAt(token.length()-1);
@@ -116,6 +111,20 @@ public class DataBase {
         Admin admin = getAdmin(Integer.parseInt(indx));
         return admin;
     }
+    public Admin getAdmin(int index) {
+        return admins.get(index);
+    }
+    public int getCustomerID(Customer customer){
+        int id=0;
+        for (var c1 : customers){
+            if (c1.email.equals(customer.email) && c1.password.equals(customer.password)
+                    && c1.username.equals(customer.username))
+                return id;
+            id++;
+        }
+        return -1;
+    }
+
 
 
 }

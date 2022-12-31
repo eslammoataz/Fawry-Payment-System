@@ -15,15 +15,9 @@ public class Transaction {
     public String method;
     public int transactionID;
 
-    public Customer customer;
+    public int customerID;
 
     public String relatedService;
 
-    public void setCustomer(Customer customer) {
-        this.customer = new Customer(customer.email,customer.username,customer.password);
-    }
 
-    public Customer Customergetter() {
-        return customer;
-    }
 }

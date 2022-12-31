@@ -3,6 +3,8 @@ import Demo.Authentication.AuthenticationSerivce;
 import Demo.Users.Customer;
 import org.springframework.stereotype.Component;
 
+import static Demo.Authentication.AuthenticationSerivce.dataBase;
+
 
 @Component
 public class WalletPayment implements Payment {
@@ -14,8 +16,9 @@ public class WalletPayment implements Payment {
         currentCustomer.wallet-=amount;
         Transaction transaction = new Transaction();
         transaction.amount = amount;
-        transaction.setCustomer(currentCustomer);
+//        transaction.setCustomer(currentCustomer);
         transaction.transactionID=currentCustomer.transactions.size()+1;
+        transaction.customerID=dataBase.getCustomerID(currentCustomer);
         currentCustomer.transactions.add(transaction);
         transaction.method="Wallet Payment";
         transaction.relatedService=serviceName;

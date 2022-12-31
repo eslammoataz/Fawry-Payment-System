@@ -30,6 +30,9 @@ public class Customer extends User {
     public ArrayList<Transaction> getTransactions() {
         return transactions;
     }
+    public Transaction getTransactionsbyID(int id) {
+        return transactions.get(id);
+    }
 
     public ArrayList<Refund> getRefunds() {
         return refunds;
