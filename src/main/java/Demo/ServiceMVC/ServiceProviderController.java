@@ -1,13 +1,10 @@
-package Demo.ServiceProviders;
+package Demo.ServiceMVC;
 
-import Demo.Payment.CreditCardPayment;
 import Demo.Payment.Transaction;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 @RestController
 public class ServiceProviderController {

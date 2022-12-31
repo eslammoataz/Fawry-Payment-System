@@ -19,11 +19,6 @@ public class FundWalletController {
        return service.fundByCredit(creditCardPayment,amount,token);
     }
 
-//    @PostMapping("/addwallet/wallet/{amount}")
-//    public String fundByWallet(@PathVariable("amount")double amount){
-//        return service.fundByWallet(amount);
-//    }
-
     @GetMapping("/getwallet")
     public double addtowallet(@RequestHeader("Authorization") String token){
         return service.getWalletBalance(token);
