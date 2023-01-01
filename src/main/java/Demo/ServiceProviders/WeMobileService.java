@@ -11,6 +11,7 @@ import java.util.Map;
 public class WeMobileService extends Services {
     String mobileNumber;
     public WeMobileService() {super.amount = 100;
+        serviceName="WE Mobile Services";
     }
 
     @Override

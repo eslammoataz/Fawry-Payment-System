@@ -31,7 +31,6 @@ public class DiscountService {
                  discount = new SpecificDiscount();
                 discount.setDiscountAmount(amount);
                  discount.setRelatedService( input.get("relatedService"));
-                dataBase.discounts.add(discount);
             }
             dataBase.discounts.add(discount);
             return "Discount added successfully";

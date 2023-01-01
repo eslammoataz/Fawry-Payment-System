@@ -12,11 +12,11 @@ public class EtisalatMobileService extends Services {
 
     public EtisalatMobileService() {
         super.amount = 45;
+        serviceName="Etisalat Mobile Services";
     }
 
     @Override
     public String servicePay(Payment payment, Customer customer, Services serviceProvider, Map<String, String> input) {
         return formHandler.paymentHandling(input, this, payment, customer);
     }
-
 }

@@ -10,6 +10,7 @@ public class WeInternetService extends Services {
     String internetNumber;
     public WeInternetService() {
         super.amount=30;
+        serviceName="WE Internet Services";
     }
 
     @Override

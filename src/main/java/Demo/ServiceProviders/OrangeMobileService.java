@@ -9,7 +9,9 @@ import java.util.Map;
 
 public class OrangeMobileService extends Services {
     String mobileNumber;
-    public OrangeMobileService() {super.amount=10;
+    public OrangeMobileService() {
+        super.amount=10;
+        serviceName="Orange Mobile Services";
     }
 
     @Override

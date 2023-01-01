@@ -10,6 +10,7 @@ import java.util.Map;
 public class VodafneMobileService extends Services {
     String mobileNumber;
     public VodafneMobileService() {super.amount=70;
+        serviceName="Vodafone Mobile Services";
     }
 
     @Override

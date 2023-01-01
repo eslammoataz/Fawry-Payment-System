@@ -11,6 +11,7 @@ public class LandlineMonthlyRecipetService extends Services {
 
     public LandlineMonthlyRecipetService() {
         super.amount=30;
+        serviceName="Landline Montly Rciept";
     }
 
     @Override

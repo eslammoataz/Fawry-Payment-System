@@ -13,6 +13,7 @@ public class VodafoneInternetService extends Services {
 
     public VodafoneInternetService() {
         super.amount = 30;
+        serviceName="Vodafone Internet Services";
     }
 
     @Override

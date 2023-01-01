@@ -14,6 +14,7 @@ public class OrangeInternetService extends Services {
 
     public OrangeInternetService() {
         super.amount = 30;
+        serviceName="Orange Internet Services";
     }
 
     @Override

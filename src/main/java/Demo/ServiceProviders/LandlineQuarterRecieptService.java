@@ -11,6 +11,7 @@ public class LandlineQuarterRecieptService extends Services {
     String landlineNumber;
 
     public LandlineQuarterRecieptService() {super.amount=10;
+        serviceName="Landline Quarter Rciept";
     }
 
     @Override
