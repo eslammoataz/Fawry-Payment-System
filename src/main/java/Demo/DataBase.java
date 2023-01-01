@@ -17,7 +17,7 @@ public class  DataBase {
     static ArrayList<Admin> admins = new ArrayList<>();
     static ArrayList<Customer> customers = new ArrayList<>();
     static ArrayList<String> servicesNames = new ArrayList<>();
-    static public ArrayList<Discount> discounts = new ArrayList<>();
+    public ArrayList<Discount> discounts = new ArrayList<>();
     static public ArrayList<Refund> refundRequest = new ArrayList<>();
     static  public ArrayList<Transaction> usersTransactions = new ArrayList<>();
 

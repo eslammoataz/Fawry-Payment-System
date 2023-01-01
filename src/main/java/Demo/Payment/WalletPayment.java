@@ -1,5 +1,6 @@
 package Demo.Payment;
 import Demo.Authentication.AuthenticationSerivce;
+import Demo.ServiceProviders.Services;
 import Demo.Users.Customer;
 import org.springframework.stereotype.Component;
 
@@ -10,18 +11,15 @@ import static Demo.Authentication.AuthenticationSerivce.dataBase;
 public class WalletPayment implements Payment {
 
     @Override
-    public String pay(double amount, Customer currentCustomer,String serviceName){
-        if(currentCustomer.wallet < amount)
-            return "Not enough Wallet balance";
+    public String pay(double amount, Customer currentCustomer, String relatedService){
         currentCustomer.wallet-=amount;
         Transaction transaction = new Transaction();
         transaction.amount =-amount;
-//        transaction.setCustomer(currentCustomer);
         transaction.transactionID=currentCustomer.transactions.size()+1;
         transaction.customerID=dataBase.getCustomerID(currentCustomer);
         currentCustomer.transactions.add(transaction);
         transaction.method="Wallet Payment";
-        transaction.relatedService=serviceName;
+        transaction.relatedService=relatedService;
         AuthenticationSerivce.dataBase.usersTransactions.add(transaction);
         return "Payment Done By Wallet";
     }

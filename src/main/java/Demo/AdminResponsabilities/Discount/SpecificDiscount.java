@@ -14,9 +14,22 @@ import org.springframework.stereotype.Component;
 public class SpecificDiscount implements Discount {
     public Double discountAmount = 0.5;
     public String discountName = "Specific Discount";
+    public String relatedService;
 
-    public SpecificDiscount(Double discountAmount) {
+    public void setDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
+    }
+
+    public void setDiscountName(String discountName) {
+        this.discountName = discountName;
+    }
+
+    public void setRelatedService(String relatedService) {
+        this.relatedService = relatedService;
+    }
+
+    public String getRelatedService() {
+        return relatedService;
     }
 
     @Override
@@ -27,5 +40,10 @@ public class SpecificDiscount implements Discount {
     @Override
     public Double getDiscountAmount() {
         return discountAmount;
+    }
+
+    @Override
+    public Double setDiscountAmount(double discountAmount) {
+        return this.discountAmount =discountAmount;
     }
 }

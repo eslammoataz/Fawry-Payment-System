@@ -8,7 +8,18 @@ import org.springframework.stereotype.Component;
 
 @Component
 public interface Discount {
+    public void setDiscountAmount(Double discountAmount);
+
+    public void setDiscountName(String discountName);
+
+    public void setRelatedService(String relatedService);
+
+    public String getRelatedService();
+
     public String getDiscountName();
+
     public Double getDiscountAmount();
+
+    public Double setDiscountAmount(double discountAmount);
 
 }

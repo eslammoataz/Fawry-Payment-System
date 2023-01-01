@@ -4,6 +4,7 @@ import Demo.DataBase;
 import Demo.Payment.Payment;
 import Demo.Payment.PaymentFactory;
 import Demo.Payment.Transaction;
+import Demo.ServiceProviders.FormHandler;
 import Demo.ServiceProviders.ServiceFactory;
 import Demo.ServiceProviders.Services;
 import Demo.Users.Customer;
@@ -31,8 +32,9 @@ public class ServiceProviderModel {
         //creating customer that will will work on
         Customer customer = dataBase.getCustomerByToken(token);
         serviceProvider = factory.create(input.get("ServiceProvider"));
+        serviceProvider.setFormHandler(new FormHandler());
         Payment payment = paymentFactory.create(input.get("paymentmethod"),input);
-        return serviceProvider.servicePay(payment, Double.parseDouble(input.get("amount")),customer,input.get("ServiceProvider"))+" to "+input.get("ServiceProvider");
+        return serviceProvider.servicePay(payment, customer, serviceProvider, input);
     }
 
     public double getServiceAmount(Map<String, String> input) {

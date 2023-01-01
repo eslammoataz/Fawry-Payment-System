@@ -4,20 +4,19 @@ import Demo.Payment.Payment;
 import Demo.Users.Customer;
 import org.springframework.stereotype.Component;
 
+import java.util.Map;
+
 @Component
-public class EtisalatMobileService extends Services{
-//    @Override
-//    public void generateForm() {
-//
-//    }
+public class EtisalatMobileService extends Services {
+    String mobileNumber;
 
     public EtisalatMobileService() {
-        super.amount=45;
+        super.amount = 45;
     }
 
     @Override
-    public String servicePay(Payment payment, double _amount, Customer customer, String serviceName){
-        return payment.pay(_amount ,customer,serviceName);
+    public String servicePay(Payment payment, Customer customer, Services serviceProvider, Map<String, String> input) {
+        return formHandler.paymentHandling(input, this, payment, customer);
     }
 
 }

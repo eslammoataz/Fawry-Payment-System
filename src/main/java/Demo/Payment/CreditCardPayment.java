@@ -1,6 +1,7 @@
 package Demo.Payment;
 
 import Demo.Authentication.AuthenticationSerivce;
+import Demo.ServiceProviders.Services;
 import Demo.Users.Customer;
 
 import static Demo.Authentication.AuthenticationSerivce.dataBase;
@@ -16,16 +17,14 @@ public class CreditCardPayment implements Payment{
     }
 
     @Override
-    public String pay(double amount, Customer currentCustomer,String serviceName){
+    public String pay(double amount, Customer currentCustomer, String relatedService){
         Transaction transaction = new Transaction();
         transaction.amount = -amount;
-//        transaction.setCustomer(currentCustomer);
         transaction.transactionID=currentCustomer.transactions.size()+1;
         transaction.customerID=dataBase.getCustomerID(currentCustomer);
-
         currentCustomer.transactions.add(transaction);
         transaction.method="Credit Card Payment";
-        transaction.relatedService=serviceName;
+        transaction.relatedService=relatedService;
         AuthenticationSerivce.dataBase.usersTransactions.add(transaction);
 
         return "Payment Done By Credit Card";

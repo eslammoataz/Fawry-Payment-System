@@ -4,22 +4,19 @@ import Demo.Payment.Payment;
 import Demo.Users.Customer;
 import org.springframework.stereotype.Component;
 
+import java.util.Map;
+
 @Component
 public abstract class Services {
     public int amount=50;
-//    public void generateForm();
+    public String serviceName;
+    FormHandler formHandler;
 
-//    public String display(){
-//        return "kareem amin";
-//    }
-    public abstract String servicePay(Payment payment , double amount , Customer customer , String serviceName);
+    public void setFormHandler(FormHandler formHandler) {
+        this.formHandler = formHandler;
+    }
 
-//    public void setForm();
+    public abstract String servicePay(Payment payment , Customer customer , Services serviceProvider, Map<String, String> input);
 
-//    public Double getAmount();
-//
-//    public void setAmount(Double amount);
-//
-//    public void viewServiceAmount();
 
 }

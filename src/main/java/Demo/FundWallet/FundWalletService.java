@@ -6,9 +6,6 @@ import Demo.Users.Customer;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import java.util.Currency;
-
-
 
 @Component
 @Service
@@ -24,7 +21,7 @@ public class FundWalletService {
 
         customer = getCustomerByToken(token);
         customer.wallet += amount;
-        return creditCardPayment.pay(amount,customer,"Fund Wallet");
+        return creditCardPayment.pay(amount,customer, null);
     }
 
     public double getWalletBalance(String token) {
