@@ -21,7 +21,7 @@ public class FundWalletService {
 
         customer = getCustomerByToken(token);
         customer.wallet += amount;
-        return creditCardPayment.pay(amount,customer, null);
+        return creditCardPayment.pay(amount,customer, "Fund Wallet");
     }
 
     public double getWalletBalance(String token) {
