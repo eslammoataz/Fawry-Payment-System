@@ -6,5 +6,5 @@ then right click on collection then create fork <br>
 4- when you fork the workspace you will find the collection with all requests url & header and body so you won't need to type everything manually <br>
 5- clone the repository as a local reposotory and then import it in eclipse as maven project 
 
-#Class Diaram 
+# Class Diaram 
 ![Class Diaram](https://raw.githubusercontent.com/eslammoataz/Fawry-Payment-System/master/Class%20Diagram.png)
