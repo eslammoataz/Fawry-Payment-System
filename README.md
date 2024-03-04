@@ -7,4 +7,4 @@ then right click on collection then create fork <br>
 5- clone the repository as a local reposotory and then import it in eclipse as maven project 
 
 # Class Diagram 
-![Class Diaram]([https://raw.githubusercontent.com/eslammoataz/Fawry-Payment-System/master/Class%20Diagram.png](https://github.com/eslammoataz/Fawry-Payment-System/blob/master/Class%20Diagram%20Fawry%20System.png)https://github.com/eslammoataz/Fawry-Payment-System/blob/master/Class%20Diagram%20Fawry%20System.png)
+![Class Diaram](https://raw.githubusercontent.com/eslammoataz/Fawry-Payment-System/master/Class%20Diagram%20Fawry%20System.png)
